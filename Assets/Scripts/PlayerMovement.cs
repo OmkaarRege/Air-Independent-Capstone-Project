@@ -4,6 +4,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public Transform cameraLocation;
 
+    public GameObject obj;
+
     public float movementspeed;
     Vector2 look;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -52,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     private void OnTriggerExit(Collider other)
-     {
+    {
         if (other.tag == "Interactable")
         {
             GameObject canvas = GameObject.Find("PlayerCanvas");
@@ -62,5 +64,19 @@ public class PlayerMovement : MonoBehaviour
                 text.SetActive(false);
             }
         }
+    }
+    
+    void LateUpdate()
+    {
+        // Get the camera's target position and the object's position
+        Vector3 targetPosition = cameraLocation.transform.position;
+        Vector3 objectPosition = transform.position;
+
+        // Create a new target position with the same Y value as the object
+        Vector3 lookAtTarget = new Vector3(targetPosition.x, objectPosition.y, targetPosition.z);
+
+        // Point the object at the new target
+        obj.transform.LookAt(lookAtTarget);
+
     }
 }
