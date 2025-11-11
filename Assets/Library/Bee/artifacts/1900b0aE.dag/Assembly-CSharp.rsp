@@ -384,6 +384,7 @@
 -analyzer:"C:/Users/omkaa/Downloads/UNITY PROJECTS/6000.2.8f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Users/omkaa/Downloads/UNITY PROJECTS/6000.2.8f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/AssetRefresh.cs"
+"Assets/Game.cs"
 "Assets/Scripts/PlayerMovement.cs"
 -langversion:9.0
 /deterministic
